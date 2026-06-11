@@ -1,0 +1,57 @@
+<svg width="1320" height="560" viewBox="0 0 1320 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 28px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #183153; }
+      .label { font: 600 22px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #183153; }
+      .sub { font: 400 16px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #4d627d; }
+      .box { fill: #f5f8fc; stroke: #bfd0e2; stroke-width: 2; rx: 22; }
+      .accent { fill: #edf6ff; stroke: #7cb0e0; stroke-width: 2; rx: 22; }
+      .provider { fill: #eef8f4; stroke: #78b89a; stroke-width: 2; rx: 22; }
+      .runtime { fill: #fff6eb; stroke: #d8ab6c; stroke-width: 2; rx: 22; }
+      .arrow { stroke: #5a7ea6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .dash { stroke: #7d94b0; stroke-width: 3; fill: none; stroke-dasharray: 10 8; }
+      .hint { font: 400 15px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #6a7d94; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#5a7ea6"/>
+    </marker>
+  </defs>
+
+  <text x="48" y="54" class="title">Genie 服务接入分层图</text>
+
+  <rect x="70" y="138" width="310" height="170" class="box"/>
+  <text x="225" y="178" text-anchor="middle" class="label">应用层</text>
+  <text x="225" y="214" text-anchor="middle" class="sub">器件解释</text>
+  <text x="225" y="242" text-anchor="middle" class="sub">板图辅助定位</text>
+  <text x="225" y="270" text-anchor="middle" class="sub">BOM 上下文问答</text>
+  <text x="225" y="298" text-anchor="middle" class="sub">结构化动作返回</text>
+
+  <rect x="500" y="160" width="320" height="126" class="accent"/>
+  <text x="660" y="200" text-anchor="middle" class="label">接口层</text>
+  <text x="660" y="236" text-anchor="middle" class="sub">OpenAI Compatible API</text>
+  <text x="660" y="264" text-anchor="middle" class="sub">统一上层调用方式，降低模型替换成本</text>
+
+  <rect x="940" y="138" width="310" height="170" class="provider"/>
+  <text x="1095" y="178" text-anchor="middle" class="label">服务层</text>
+  <text x="1095" y="214" text-anchor="middle" class="sub">GenieAPIService</text>
+  <text x="1095" y="242" text-anchor="middle" class="sub">本地问答承载层</text>
+  <text x="1095" y="270" text-anchor="middle" class="sub">独立管理服务生命周期</text>
+  <text x="1095" y="298" text-anchor="middle" class="sub">避免将模型执行逻辑嵌入主进程</text>
+
+  <path d="M380 223 H488" class="arrow"/>
+  <path d="M820 223 H928" class="arrow"/>
+
+  <rect x="180" y="386" width="380" height="92" class="runtime"/>
+  <text x="370" y="426" text-anchor="middle" class="label">模型与配置资源</text>
+  <text x="370" y="454" text-anchor="middle" class="sub">模型包、本地配置、运行时依赖</text>
+
+  <rect x="760" y="386" width="380" height="92" class="box"/>
+  <text x="950" y="426" text-anchor="middle" class="label">运行平台</text>
+  <text x="950" y="454" text-anchor="middle" class="sub">Windows on Snapdragon 本地推理环境</text>
+
+  <path d="M370 386 C370 336, 566 336, 620 286" class="dash"/>
+  <path d="M950 386 C950 336, 754 336, 700 286" class="dash"/>
+  <path d="M950 386 C950 336, 1040 336, 1095 308" class="dash"/>
+
+  <text x="660" y="522" text-anchor="middle" class="hint">核心思路：业务层只依赖统一接口，本地问答能力由独立服务承载，资源准备与运行环境则沉到下层统一管理。</text>
+</svg>
