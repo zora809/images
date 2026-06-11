@@ -1,0 +1,50 @@
+<svg width="1400" height="320" viewBox="0 0 1400 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font: 700 28px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #183153; }
+      .label { font: 600 20px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #183153; }
+      .sub { font: 400 16px "PingFang SC", "Microsoft YaHei", sans-serif; fill: #4c6480; }
+      .chip { fill: #f4f7fb; stroke: #bfd0e2; stroke-width: 2; rx: 22; }
+      .core { fill: #eef8f4; stroke: #78b89a; stroke-width: 2; rx: 22; }
+      .arrow { stroke: #5a7ea6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0 0, 10 4, 0 8" fill="#5a7ea6"/>
+    </marker>
+  </defs>
+
+  <text x="48" y="48" class="title">PCBA Assistant 端侧工程闭环示意图</text>
+
+  <rect x="48" y="92" width="210" height="128" class="chip"/>
+  <text x="153" y="138" text-anchor="middle" class="label">输入材料</text>
+  <text x="153" y="170" text-anchor="middle" class="sub">BOM / PCB 板图 / 实拍照片</text>
+  <text x="153" y="196" text-anchor="middle" class="sub">工程上下文的原始来源</text>
+
+  <rect x="318" y="92" width="210" height="128" class="core"/>
+  <text x="423" y="138" text-anchor="middle" class="label">板图 OCR</text>
+  <text x="423" y="170" text-anchor="middle" class="sub">识别 designator</text>
+  <text x="423" y="196" text-anchor="middle" class="sub">提取文字框与位号文本</text>
+
+  <rect x="588" y="92" width="220" height="128" class="core"/>
+  <text x="698" y="138" text-anchor="middle" class="label">BOM 对齐</text>
+  <text x="698" y="170" text-anchor="middle" class="sub">位号与料号建立映射</text>
+  <text x="698" y="196" text-anchor="middle" class="sub">生成结构化器件信息</text>
+
+  <rect x="868" y="92" width="210" height="128" class="core"/>
+  <text x="973" y="138" text-anchor="middle" class="label">板图定位</text>
+  <text x="973" y="170" text-anchor="middle" class="sub">可视化高亮</text>
+  <text x="973" y="196" text-anchor="middle" class="sub">支持器件交互与复核</text>
+
+  <rect x="1138" y="92" width="214" height="128" class="chip"/>
+  <text x="1245" y="138" text-anchor="middle" class="label">本地 Genie 问答</text>
+  <text x="1245" y="170" text-anchor="middle" class="sub">结合 BOM / 位号 / 板图上下文</text>
+  <text x="1245" y="196" text-anchor="middle" class="sub">输出回答与高亮动作</text>
+
+  <path d="M258 156 H308" class="arrow"/>
+  <path d="M528 156 H578" class="arrow"/>
+  <path d="M808 156 H858" class="arrow"/>
+  <path d="M1078 156 H1128" class="arrow"/>
+
+  <path d="M1245 230 C1245 272, 700 284, 153 230" class="arrow"/>
+  <text x="700" y="292" text-anchor="middle" class="sub">问答结果继续反哺工程核查与交互，形成端侧闭环</text>
+</svg>
